@@ -22,6 +22,7 @@ type InMemoryIncrementStore @entity {
 
 type EventType @entity {
   id: ID! #ToHex of EventName
+  baseMetrics: [BaseMetric!] @derivedFrom(field: "type")
 }
 
 type MetricParam @entity {
